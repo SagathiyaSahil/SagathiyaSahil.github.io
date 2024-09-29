@@ -1,6 +1,6 @@
 function calculateAge() {
     const birthdateInput = document.getElementById('birthdate').value;
-    
+
     if (!birthdateInput) {
         document.getElementById('age-result').innerText = "Please enter a valid birthdate.";
         return;
@@ -16,8 +16,10 @@ function calculateAge() {
         age--;
     }
 
+    const birthYear = birthdate.getFullYear();
     const birthMonth = birthdate.toLocaleString('default', { month: 'long' });
     const birthDay = birthdate.getDate();
 
-    document.getElementById('age-result').innerText = `You are ${age} years old. Your birthday is on ${birthMonth} ${birthDay}.`;
+    document.getElementById('age-result').innerText = 
+        `You are ${age} years old. Your birthday is on ${birthMonth} ${birthDay}, ${birthYear}.`;
 }
