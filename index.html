@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate Age</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator & Day of the Week</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Age Calculator</h1>
-        <label for="birthdate">Enter your birthdate:</label>
-        <input type="date" id="birthdate">
-        <button onclick="calculateAge()">Calculate Age</button>
-        <p id="age-result"></p>
-    </div>
+
+  <div class="container">
+    <h2>Age Calculator & Day of the Week Finder</h2>
     
-    <script src="script.js"></script>
+    <h3>Calculate Age</h3>
+    <input type="date" id="birthdate" />
+    <button onclick="calculateAge()">Calculate Age</button>
+    <p class="result" id="ageResult"></p>
+
+    <h3>Find Day of the Week</h3>
+    <input type="date" id="dayOfWeekDate" />
+    <button onclick="findDayOfWeek()">Find Day</button>
+    <p class="result" id="dayResult"></p>
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
