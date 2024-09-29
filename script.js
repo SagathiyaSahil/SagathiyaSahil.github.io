@@ -1,25 +1,19 @@
+// Function to calculate age
 function calculateAge() {
-    const birthdateInput = document.getElementById('birthdate').value;
+  const birthdate = new Date(document.getElementById('birthdate').value);
+  const today = new Date();
+  let age = today.getFullYear() - birthdate.getFullYear();
+  const monthDiff = today.getMonth() - birthdate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdate.getDate())) {
+    age--;
+  }
+  document.getElementById('ageResult').innerText = `Your Age: ${age} years`;
+}
 
-    if (!birthdateInput) {
-        document.getElementById('age-result').innerText = "Please enter a valid birthdate.";
-        return;
-    }
-
-    const birthdate = new Date(birthdateInput);
-    const today = new Date();
-    let age = today.getFullYear() - birthdate.getFullYear();
-    const monthDifference = today.getMonth() - birthdate.getMonth();
-    
-    // Adjust age if the birthday hasn't occurred yet this year
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
-        age--;
-    }
-
-    const birthYear = birthdate.getFullYear();
-    const birthMonth = birthdate.toLocaleString('default', { month: 'long' });
-    const birthDay = birthdate.getDate();
-
-    document.getElementById('age-result').innerText = 
-        `You are ${age} years old. Your birthday is on ${birthMonth} ${birthDay}, ${birthYear}.`;
+// Function to find the day of the week
+function findDayOfWeek() {
+  const dateInput = new Date(document.getElementById('dayOfWeekDate').value);
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const day = days[dateInput.getDay()];
+  document.getElementById('dayResult').innerText = `Day of the Week: ${day}`;
 }
